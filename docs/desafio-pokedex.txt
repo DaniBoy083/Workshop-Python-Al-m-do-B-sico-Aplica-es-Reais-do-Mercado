@@ -1,0 +1,87 @@
+DESAFIO: POKÉDEX INCOMPLETA
+
+===================================
+O CENÁRIO
+===================================
+Você acabou de entrar como estagiário(a) de Dados em uma startup que está
+lançando um app de Pokémon. O time de produto te passou uma planilha
+exportada às pressas de um sistema antigo — mas ela só tem o ID e o NOME
+de cada Pokémon. Nada de tipo, stats, altura, peso... nada.
+
+Antes da reunião de amanhã, você precisa enriquecer essa base usando a
+PokeAPI (API pública e gratuita, não precisa de cadastro nem chave:
+https://pokeapi.co/) e responder algumas perguntas que o time de produto
+quer saber para decidir o balanceamento do jogo.
+
+===================================
+O QUE VOCÊ RECEBE
+===================================
+Um arquivo pokemon_base.csv com esta estrutura:
+
+id | nome
+6  | charizard
+94 | gengar
+130 | gyarados
+... | ...
+
+(~30 linhas, gerações misturadas)
+
+===================================
+O QUE VOCÊ PRECISA FAZER
+===================================
+1. Ler o CSV com Python.
+
+2. Para cada Pokémon da lista, consultar a PokeAPI
+   (GET https://pokeapi.co/api/v2/pokemon/{nome}) e extrair:
+   - Tipo(s)
+   - Stats base: HP, Attack, Defense, Special Attack, Special Defense, Speed
+   - Altura e peso
+   - Pelo menos uma habilidade (ability)
+
+3. Gerar um novo arquivo pokemon_completo.csv com todas essas colunas
+   preenchidas.
+
+4. Tratar pelo menos um erro possível (ex.: nome digitado errado /
+   Pokémon não encontrado) sem que o script quebre.
+
+===================================
+PERGUNTAS PARA RESPONDER
+(entregar junto, num respostas.txt)
+===================================
+1. Qual Pokémon tem a maior soma total de stats?
+2. Qual tipo tem a maior média de Attack entre os Pokémon da lista?
+3. Quantos Pokémon da lista são do tipo Water?
+4. Quais são os 5 mais rápidos (maior Speed)?
+5. Monte um "time dos sonhos" de 6 Pokémon com a maior soma de stats —
+   quais são?
+
+Obs.: Todas as respostas têm um valor certo, porque todo mundo está
+partindo do mesmo CSV. Capricha no código, mas o que importa no final
+são esses números batendo.
+
+===================================
+DESAFIO BÔNUS (opcional, para quem terminar antes)
+===================================
+Usando o endpoint https://pokeapi.co/api/v2/type/{tipo}, descubra:
+contra quais tipos o seu "time dos sonhos" tem vantagem, e contra quais
+tem desvantagem?
+
+===================================
+FORMATO DE ENTREGA
+===================================
+- pokemon_completo.csv
+- respostas.txt (ou print das respostas)
+- O script .py que você usou
+
+Enviar por: [Google Forms / GitHub Gist / e-mail — escolher canal]
+
+===================================
+DICAS TÉCNICAS
+===================================
+- Use a biblioteca requests para chamar a API.
+- Coloque um pequeno time.sleep(0.1) entre as chamadas — boa prática
+  para não sobrecarregar a API.
+- Se quiser rodar o script várias vezes sem repetir as chamadas, salve
+  as respostas da API em um JSON local (cache).
+- Erros comuns: nome com maiúscula, espaço ou acento — a API espera
+  nomes em minúsculo e sem acento.

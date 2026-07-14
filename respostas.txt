@@ -1,0 +1,11 @@
+RESPOSTAS DO DESAFIO POKEDEX
+
+1. Pokemon com maior soma total de stats: mewtwo (680)
+2. Tipo com maior media de Attack: dragon (133.00)
+3. Quantidade de Pokemon do tipo Water: 5
+4. Top 5 mais rapidos: mewtwo, greninja, alakazam, espeon, gengar
+5. Time dos sonhos (6 maiores totais): mewtwo, salamence, metagross, dragonite, tyranitar, garchomp
+
+BONUS - MATCHUPS DO TIME DOS SONHOS
+Vantagens contra tipos: bug, dragon, electric, fairy, fighting, fire, flying, ghost, grass, ice, poison, psychic, rock, steel
+Desvantagens contra tipos: bug, dark, dragon, electric, fairy, fighting, fire, ghost, grass, ground, ice, rock, steel, water
