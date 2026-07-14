@@ -87,3 +87,17 @@ Saida esperada:
 
 - Pasta: `dist/PokedexDataStudio/`
 - Executavel: `dist/PokedexDataStudio/PokedexDataStudio.exe`
+
+## Versionamento e changelog
+
+Fluxo recomendado para novas versoes:
+
+1. Commitar as alteracoes da versao
+2. Subir para a branch principal
+3. Criar release com notas automaticas baseadas nos commits
+
+Exemplo de comando:
+
+```bash
+gh release create v1.0.1 --target main --generate-notes
+```
