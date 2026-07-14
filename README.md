@@ -101,3 +101,22 @@ Exemplo de comando:
 ```bash
 gh release create v1.0.1 --target main --generate-notes
 ```
+
+## Release automatica com GitHub Actions
+
+O projeto possui workflow em `.github/workflows/release-on-tag.yml`.
+
+Quando uma tag no formato `v*` e enviada para o repositorio, o workflow:
+
+1. Instala dependencias de desenvolvimento
+2. Executa os testes
+3. Gera o executavel Windows com PyInstaller
+4. Compacta o build em ZIP
+5. Cria (ou atualiza) a release com notas automaticas
+
+Exemplo para disparar:
+
+```bash
+git tag v1.0.2
+git push origin v1.0.2
+```
